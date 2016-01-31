@@ -1,0 +1,30 @@
+<table class="profile">
+  <tr>
+    <td class="main">
+
+      <h1>
+  <%= gravatar_for @user %>
+  <%= @user.nom %>
+</h1>
+<p>
+  URL : <%= link_to user_path(@user), user_url(@user) %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+  </td>
+    </tr>
+
+  <%= render @microposts %>
+
+  <tr>
+    <td class="sidebar round">
+      <strong>Nom</strong> <%= @user.nom %><br />
+      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+      <strong>Messages</strong> <%= @user.microposts.count %>
+    </td>
+  </tr>
+  </table>

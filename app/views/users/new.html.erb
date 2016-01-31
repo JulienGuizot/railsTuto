@@ -1,0 +1,59 @@
+<h1>New user</h1>
+
+<%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+
+    <div class="field">
+      <%= f.label :nom %><br />
+      <%= f.text_field :nom %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirmation" %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Inscription" %>
+    </div>
+<% end %>
+
+<%= link_to 'Back', users_path %>
+
+<!--
+<form action="/users" class="new_user" id="new_user" method="post">
+<div style="margin:0;padding:0;display:inline">
+<input nom="authenticity_token" type="hidden"
+       value="rB82sI7Qw5J9J1UMILG/VQL411vH5putR+JwlxLScMQ=" />
+</div>
+
+  <div class="field">
+    <label for="user_nom">Nom</label><br />
+    <input id="user_nom" nom="user[nom]" size="30" type="text" />
+  </div>
+
+  <div class="field">
+    <label for="user_email">Email</label><br />
+    <input id="user_email" nom="user[email]" size="30" type="text" />
+  </div>
+  <div class="field">
+    <label for="user_password">Password</label><br />
+    <input id="user_password" nom="user[password]" size="30" type="password" />
+  </div>
+
+  <div class="field">
+    <label for="user_password_confirmation">Confirmation</label><br />
+    <input id="user_password_confirmation" nom="user[password_confirmation]"
+           size="30" type="password" />
+  </div>
+  <div class="actions">
+    <input id="user_submit" nom="commit" type="submit" value="Inscription" />
+  </div>
+</form>
+-->
